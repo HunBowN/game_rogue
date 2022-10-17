@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700&amp;subset=cyrillic" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700&amp;subset=cyrillic" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,700&amp;subset=cyrillic" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,400i|Tinos:400,400i&amp;subset=cyrillic"
+    rel="stylesheet" />
+  <script src="https://code.jquery.com/jquery-2.1.0.js"></script>
+  <!-- <script type="text/javascript" src="/code.jquery.com/shared/3rdparty/jquery/jquery.js" language="javascript1.1"></script> -->
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body,
+    html {
+      height: 100%;
+    }
+
+    body {
+      background-color: #000000;
+      color: #ffffff;
+    }
+
+    h1 {
+      font-family: "Playfair Display";
+      font-size: 30px;
+      padding: 10px 0px;
+      margin: 0px;
+    }
+
+    .field-box {
+      border: 2px solid #d0d0d0;
+      float: left;
+    }
+
+    .start {
+      position: absolute;
+      display: inline-block;
+      color: white;
+      border: 2px solid white;
+      border-radius: 0.5rem;
+      padding: 4px;
+      z-index: 50;
+      font-size: 30px;
+      background-color: #000000;
+
+    }
+
+    input {
+      display: inline-block;
+      color: white;
+      border: 2px solid white;
+      border-radius: 0.5rem;
+      padding: 4px;
+      z-index: 50;
+      font-size: 20px;
+      background-color: #000000;
+
+    }
+
+    .field {
+      position: relative;
+      width: 1050px;
+      height: 650px;
+      overflow: hidden;
+    }
+
+    .field .tile {
+      position: absolute;
+      width: 50px;
+      height: 50px;
+      background-size: 100%;
+      background-image: url(images/tile-.png);
+      background-color: #ff0000;
+      z-index: 5;
+    }
+
+    .field .tileW {
+      background-image: url(images/tile-W.png);
+    }
+
+    .field .tileA {
+      background-image: url(images/attack.png);
+      z-index: 15;
+      /* background: transparent; */
+      /* background: rgba(0, 0, 0, 0.5); */
+    }
+
+    .field .tileE {
+      background-image: url(images/tile-E.png);
+      z-index: 10;
+      /* animation: blink 2s infinite; */
+    }
+
+    .field .tileP {
+      background-image: url(images/tile-P.png);
+      z-index: 10;
+    }
+
+    .field .tileHP {
+      background-image: url(images/tile-HP.png);
+      z-index: 9;
+    }
+
+    .field .tileSW {
+      background-image: url(images/tile-SW.png);
+      z-index: 9;
+    }
+
+    .field .tile .health {
+      background-color: #ff0000;
+      z-index: 11;
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      height: 3px;
+    }
+
+    .field .tileP .health {
+      background-color: #00ff00;
+      z-index: 11;
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      height: 3px;
+    }
+
+    .inventory-box {
+      border: 2px solid #d0d0d0;
+      float: left;
+    }
+
+    .inventory {
+      position: relative;
+      width: 800px;
+      height: 32px;
+    }
+
+    .cl {
+      clear: both;
+      display: block;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>Игровое поле</h1>
+  <!-- <audio src="images/1579196702_viktor_coy_sledi_za_soboy.mp3" autoplay="autoplay"></audio> -->
+  <input type="button" value="Воспроизвести музыку" class="audio" id="audio"></input>
+  <div class="start"></div>
+  <div class="field-box">
+
+    <div class="field"></div>
+  </div>
+  <div class="cl"></div>
+  <!--h1>Инвентарь</h1>
+		<div class="inventory-box"><div class="inventory"></div></div-->
+  <script src="index.js"></script>
+  <script>
+
+    let game = new Game()
+    game.startGame()
+  </script>
+</body>
+
+</html>
